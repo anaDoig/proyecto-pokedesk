@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+   height: 100%;
+   width: 100%;
+   
+}
+
+body {
+    font-family: $opensansRegular;
+    font-size: $textFontSize;
+    color: $darkGrey;
+    position: relative;
+}
+
+main {
+    background-color: $lighterGrey;
+
+    .container {
+        padding: size(40) size(20);
+    }
+}
+
+h1 {
+    font-size: size(80);
+    color: $white;
+    line-height: size(80);
+    font-family: $amaranth;
+    margin-bottom: size(20);
+    text-shadow: 2px 2px 3px $darkGrey;
+}
+
+.container {
+    width: 100%;
+    max-width: $contentMaxWidth;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: size(30);
+    padding: $mobileMainPadding;
+
+    @media (min-width: $mobileMaxWidth) {
+        padding: $desktopMainPadding;
+    }
+}
+
+.card {
+    border-radius: size(20);
+    flex-basis: size(210);
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    box-shadow: 2px 3px 5px -4px $darkGrey;
+    padding: size(15) size(1) size(1) size(1);
+    cursor: pointer;
+
+    &__img {
+        width: size(150);
+        height: size(150);
+        position: relative;
+        z-index: 1;
+    }
+    
+    &__pokemon-number {
+        font-family: $opensansBold;
+        font-size: size(70);
+        color: $white;
+        margin-bottom: size(-60);
+        opacity: 0.7;
+    }
+
+    .info {
+        width: 100%;
+        background-color: $white;
+        align-self: flex-end;
+        border-radius: 0 0 size(20) size(20);
+        text-align: center;
+
+        &__title {
+            font-family: $amaranth;
+            font-size: size(35);
+            margin: 0 0 size(20) 0;
+            background-color: #fff;
+            padding-top: size(10);
+            text-transform: capitalize;
+        }
+
+        &__pokemon-type {
+            display: flex;
+            justify-content: center;
+            gap: size(10);
+            margin-bottom: size(30);
+
+            li {
+                width: size(30);
+                height: size(30);
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &--fire {
+        background-color: $orange;
+    }
+    &--grass {
+        background-color: $green;
+    }
+    &--water {
+        background-color: $blue;
+    }
+    &--bug {
+        background-color: $vividGreen;
+    }
+    &--poison {
+        background-color: $purple;
+    }
+    &--normal {
+        background-color: $grey;
+    }
+    &--ground {
+        background-color: $brown;
+    }
+    &--electric {
+        background-color: $yellow;
+    }
+    &--fairy {
+        background-color: $pink;
+    }
+    &--fighting {
+        background-color: $darkRed;
+    }
+    &--psychic {
+        background-color: $darkPink;
+    }
+    &--rock {
+        background-color: $ochre;
+    }
+    &--ghost {
+        background-color: $darkPurple;
+    }
+    &--ice {
+        background-color: $aqua;
+    }
+    &--dragon {
+        background-color: $vividPurple;
+    }
+    &--dark {
+        background-color: $lightBrown;
+    }
+}
+
