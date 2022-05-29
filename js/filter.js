@@ -1,52 +1,68 @@
 function FilterAbstract() {
     this.filterButton = document.querySelector('.filter-button');
-    this.buttonsContainer = document.querySelector('.filter__buttons-container');
     this.filterContainer = document.querySelector('.filter');
+    this.filterContainerHeight = this.filterContainer.clientHeight + 15;
+    this.pokemonsContainer = document.querySelector('.pokemons-container-js');
     this.type = '';
-    this.pokemonTypes = [];
     this.buttonClicked = false;
+    this.menuDown = false;
 };
 
 FilterAbstract.prototype = {
     init: function () {
         var _this = this;
-        console.log('iniciando');
-        
         _this.listeners();
-        
-        console.log(CONFIG.pokemonsArray);
+        _this.filterContainer.style.top = _this.formatContainerHeight();
     },
     listeners: function () {
         var _this = this;
         
         _this.filterButton.addEventListener('click', function (event) {
-            console.log('click');
-            if (!_this.buttonClicked) {
-                _this.getPokemonTypesArray();
-                _this.generatePokemonTypes();
-                _this.buttonClicked = true;
-            }
+            _this.toggleFilterContainer();
             
-            _this.filterContainer.style.top = '0';
         });
-    },
-    getPokemonTypesArray: function () {
-        var _this = this;
-        CONFIG.pokemonsArray.forEach(function (element) {
-            _this.type = element.types[0].type.name;
-            if (!_this.pokemonTypes.includes(_this.type)) {
-                _this.pokemonTypes.push(_this.type);
-            }
-        });
-    },
-    generatePokemonTypes: function () {
-        var _this = this;
-        _this.pokemonTypes.forEach(function (element) {
-            const button = document.createElement('button');
-            const buttonText = document.createTextNode(element);
-            button.appendChild(buttonText);
-            _this.buttonsContainer.appendChild(button);
+
+        document.querySelectorAll('.filter__button').forEach((button) => {
+            button.addEventListener('click', event => {
+                _this.filterByType(event.target.classList[1]);
+            })
         })
+        
+    },
+    toggleFilterContainer: function () {
+        var _this = this;
+        if(!_this.menuDown) {
+            _this.filterContainer.style.top = '0';
+            _this.menuDown = true;
+        } else {
+            _this.filterContainer.style.top = _this.formatContainerHeight();
+            _this.menuDown = false;
+        }
+    },
+    formatContainerHeight: function () {
+        var _this = this;
+        return '-' + _this.filterContainerHeight + 'px';
+    },
+    filterByType: function (type) {
+        var _this = this;
+        if (type === "all") {
+            return paintPokemons(CONFIG.pokemonsArray);
+        }
+
+        const filteredByType = CONFIG.pokemonsArray.filter((pokemon) => {
+            let matchFirstType = false;
+            let matchSecondType = false;
+
+            if (pokemon.types[1]) {
+                matchSecondType = pokemon.types[1].type.name === type;
+            }
+
+            if (pokemon.types[0]) {
+                matchFirstType = pokemon.types[0].type.name === type;
+            }
+            return matchFirstType || matchSecondType;
+        });
+        Utils.generatePokemons(filteredByType, _this.pokemonsContainer);
     }
 };
 

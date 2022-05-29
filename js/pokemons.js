@@ -4,13 +4,15 @@ function PokemonsAbstract() {
     this.pokemonsMax = 20;
     this.pokemonsContainer = document.querySelector('.pokemons-container-js');
     this.loadingContainer = document.querySelector('.loading-container');
+    this.buttonsContainer = document.querySelector('.filter__buttons-container');
+    this.filterContainer = document.querySelector('.filter');
+    this.pokemonTypes = [];
 }
 
 PokemonsAbstract.prototype = {
     init: function () {
         var _this = this;
         _this.getPokemonsArr();
-        console.log(CONFIG.pokemonsArray);
         
     },
     show: function () {
@@ -26,7 +28,7 @@ PokemonsAbstract.prototype = {
         _this.url = `https://pokeapi.co/api/v2/pokemon/${_this.pokemonId}`;
         const res = await fetch(_this.url);
         const pokemon = await res.json();
-
+        console.log('getPokemon');
         CONFIG.pokemonsArray.push(pokemon);
     },
 
@@ -37,8 +39,35 @@ PokemonsAbstract.prototype = {
         }
 
         Utils.generatePokemons(CONFIG.pokemonsArray, _this.pokemonsContainer);
+        _this.getPokemonTypesArray();
+        _this.generatePokemonTypesButtons();
+        _this.initFilter();
         Utils.hide(_this.loadingContainer);
         
+    },
+    getPokemonTypesArray: function () {
+        var _this = this;
+        CONFIG.pokemonsArray.forEach(function (element) {
+            _this.type = element.types[0].type.name;
+            if (!_this.pokemonTypes.includes(_this.type)) {
+                _this.pokemonTypes.push(_this.type);
+            }
+        });
+    },
+    generatePokemonTypesButtons: function () {
+        var _this = this;
+        _this.pokemonTypes.forEach(function (element) {
+            const button = document.createElement('button');
+            const buttonText = document.createTextNode(element);
+            button.setAttribute('data-pokemon-type', element);
+            button.classList.add('filter__button', `${element}`);
+            button.appendChild(buttonText);
+            _this.buttonsContainer.appendChild(button);
+        });
+    },
+    initFilter: function () {
+        let filter = new Filter();
+        filter.init();
     }
       
 };

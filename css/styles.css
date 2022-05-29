@@ -187,7 +187,7 @@ input {
   left: 0;
   width: 0;
   height: 5rem;
-  color: #403e3e;
+  color: #555252;
   -webkit-text-stroke: 0;
   overflow: hidden;
   text-align: left;
@@ -208,7 +208,7 @@ html, body {
 body {
   font-family: "open_sansregular", sans-serif;
   font-size: size(16);
-  color: #403e3e;
+  color: #555252;
   position: relative;
 }
 
@@ -226,7 +226,7 @@ h1 {
   line-height: 5rem;
   font-family: "amaranthbold", sans-serif;
   margin-bottom: 1.25rem;
-  text-shadow: 2px 2px 3px #403e3e;
+  text-shadow: 2px 2px 3px #555252;
 }
 
 .container {
@@ -263,8 +263,8 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-shadow: 2px 3px 5px -4px #403e3e;
-          box-shadow: 2px 3px 5px -4px #403e3e;
+  -webkit-box-shadow: 2px 3px 5px -4px #555252;
+          box-shadow: 2px 3px 5px -4px #555252;
   padding: 0.9375rem 0.0625rem 0.0625rem 0.0625rem;
   cursor: pointer;
 }
@@ -549,8 +549,8 @@ input {
   width: 100%;
   border: 0;
   margin-bottom: 1.25rem;
-  -webkit-box-shadow: 2px 2px 4px -1px #403e3e;
-          box-shadow: 2px 2px 4px -1px #403e3e;
+  -webkit-box-shadow: 2px 2px 4px -1px #555252;
+          box-shadow: 2px 2px 4px -1px #555252;
   border-radius: 20px;
   padding: 0 15px;
 }
@@ -560,9 +560,9 @@ input:focus {
 }
 
 .filter-button {
-  width: 3.75rem;
+  width: 5rem;
   height: 2.5rem;
-  background-color: #fff;
+  background-color: #fffafa;
   margin-left: 1.25rem;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
@@ -570,22 +570,119 @@ input:focus {
   z-index: 2;
 }
 
+.filter-button:before {
+  content: 'Filtrar';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: "open_sansbold", sans-serif;
+  font-size: 1.125rem;
+}
+
 .filter {
-  background-color: #ecebeb;
+  background-color: #fffafa;
   width: 100%;
-  height: 3.125rem;
   cursor: pointer;
   position: relative;
-  top: -3.125rem;
+  top: -5.3125rem;
   z-index: 0;
   -webkit-transition: top 0.3s;
   transition: top 0.3s;
   padding: 1.25rem;
+  -webkit-box-shadow: 1px 0px 3px 1px #ccc;
+          box-shadow: 1px 0px 3px 1px #ccc;
 }
 
 .filter__buttons-container {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.9375rem;
+}
+
+.filter__button {
+  cursor: pointer;
+  border: 0;
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  font-family: "open_sansbold", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: #555252;
+}
+
+.filter__button.fire {
+  background-color: #f7cfa8;
+}
+
+.filter__button.grass {
+  background-color: #b8fadb;
+}
+
+.filter__button.water {
+  background-color: #bed9ff;
+}
+
+.filter__button.bug {
+  background-color: #dcf9a1;
+}
+
+.filter__button.poison {
+  background-color: #e7a1e5;
+}
+
+.filter__button.normal {
+  background-color: #ededed;
+}
+
+.filter__button.ground {
+  background-color: #E5C87D;
+}
+
+.filter__button.electric {
+  background-color: #fbdd61;
+}
+
+.filter__button.fairy {
+  background-color: #fad3f8;
+}
+
+.filter__button.fighting {
+  background-color: #e47873;
+}
+
+.filter__button.psychic {
+  background-color: #fb7ca3;
+}
+
+.filter__button.rock {
+  background-color: #d6c881;
+}
+
+.filter__button.ghost {
+  background-color: #b69dd7;
+}
+
+.filter__button.ice {
+  background-color: #a6efec;
+}
+
+.filter__button.dragon {
+  background-color: #c0a7fa;
+}
+
+.filter__button.dark {
+  background-color: #debea8;
 }
 /*# sourceMappingURL=styles.css.map */

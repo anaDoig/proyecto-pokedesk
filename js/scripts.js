@@ -4,7 +4,5 @@ window.onload = function() {
 
     let searchBar = new SearchBar();
     searchBar.init();
-
-    let filter = new Filter();
-    filter.init();
+    
 };
