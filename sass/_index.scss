@@ -56,12 +56,43 @@ h1 {
     box-shadow: 2px 3px 5px -4px $darkGrey;
     padding: size(15) size(1) size(1) size(1);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        background-color: $white;
+        bottom: 0;
+        width: 110%;
+        height: 45%;
+        transition: all 0.5s ease;
+    }
+
+    &:hover {
+        .card__img {
+            transform: scale(1.1);
+        }
+        &:after {
+            bottom: -35px;
+            transform: rotate(10deg);
+            height: 50%;
+            width: 150%;
+        }
+        
+        .info {
+            &__more-info {
+                bottom: 10px;
+            }
+        }
+    }
 
     &__img {
         width: size(150);
         height: size(150);
         position: relative;
         z-index: 1;
+        transition: all 0.3s ease;
     }
     
     &__pokemon-number {
@@ -74,16 +105,17 @@ h1 {
 
     .info {
         width: 100%;
-        background-color: $white;
         align-self: flex-end;
-        border-radius: 0 0 size(20) size(20);
         text-align: center;
+        position: relative;
+        z-index: 1;
+        padding-bottom: size(5);
+        transition: all 0.5s ease;
 
         &__title {
             font-family: $amaranth;
             font-size: size(35);
             margin: 0 0 size(20) 0;
-            background-color: #fff;
             padding-top: size(10);
             text-transform: capitalize;
         }
@@ -101,6 +133,22 @@ h1 {
                     width: 100%;
                 }
             }
+        }
+        
+        &__more-info {
+            border: 0;
+            padding: size(10) size(15);
+            font-family: $opensansBold;
+            color: #fff;
+            background-color: $red;
+            border-radius: 5px;
+            font-size: size(16);
+            line-height: size(16);
+            position: absolute;
+            bottom: -40px;
+            left: 20px;
+            cursor: pointer;
+            transition: all 0.5s ease;
         }
     }
     &--fire {

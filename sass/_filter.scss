@@ -7,6 +7,8 @@
     cursor: pointer;
     position: relative;
     z-index: 2;
+    bottom: -4px;
+
     &:before {
         content: 'Filtrar';
         position: absolute;
@@ -50,6 +52,11 @@
         cursor: pointer;
         text-transform: capitalize;
         color: $white;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            box-shadow: 1px 0px 3px 1px #ccc;
+        }
 
         &.fire {
             background-color: $orange;
@@ -103,6 +110,4 @@
             background-color: $red;
         }
     }
-    
-    
 }

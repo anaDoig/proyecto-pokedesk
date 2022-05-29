@@ -267,6 +267,36 @@ h1 {
           box-shadow: 2px 3px 5px -4px #555252;
   padding: 0.9375rem 0.0625rem 0.0625rem 0.0625rem;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  bottom: 0;
+  width: 110%;
+  height: 45%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.card:hover .card__img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.card:hover:after {
+  bottom: -35px;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+  height: 50%;
+  width: 150%;
+}
+
+.card:hover .info__more-info {
+  bottom: 10px;
 }
 
 .card__img {
@@ -274,6 +304,8 @@ h1 {
   height: 9.375rem;
   position: relative;
   z-index: 1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .card__pokemon-number {
@@ -286,18 +318,20 @@ h1 {
 
 .card .info {
   width: 100%;
-  background-color: #fff;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  border-radius: 0 0 1.25rem 1.25rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 0.3125rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .card .info__title {
   font-family: "amaranthbold", sans-serif;
   font-size: 2.1875rem;
   margin: 0 0 1.25rem 0;
-  background-color: #fff;
   padding-top: 0.625rem;
   text-transform: capitalize;
 }
@@ -320,6 +354,23 @@ h1 {
 
 .card .info__pokemon-type li img {
   width: 100%;
+}
+
+.card .info__more-info {
+  border: 0;
+  padding: 0.625rem 0.9375rem;
+  font-family: "open_sansbold", sans-serif;
+  color: #fff;
+  background-color: #fa6655;
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 1rem;
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .card--fire {
@@ -390,6 +441,8 @@ header {
   background-color: #fa6655;
   position: relative;
   z-index: 1;
+  -webkit-box-shadow: 1px 0px 3px 1px #ccc;
+          box-shadow: 1px 0px 3px 1px #ccc;
 }
 
 header .container {
@@ -568,6 +621,7 @@ input:focus {
   cursor: pointer;
   position: relative;
   z-index: 2;
+  bottom: -4px;
 }
 
 .filter-button:before {
@@ -620,6 +674,13 @@ input:focus {
   cursor: pointer;
   text-transform: capitalize;
   color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.filter__button:hover {
+  -webkit-box-shadow: 1px 0px 3px 1px #ccc;
+          box-shadow: 1px 0px 3px 1px #ccc;
 }
 
 .filter__button.fire {

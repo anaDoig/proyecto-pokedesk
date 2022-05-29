@@ -14,6 +14,7 @@ const Utils = {
                 <div class="info">
                     <p class="info__title">${element.name}</p>
                     <ul class="info__pokemon-type">${_this.generatePokemonTypes(element.types)}</ul>
+                    <button class="info__more-info">More info</button>
                 </div>`;
             card.innerHTML = cardHTML;
             container.appendChild(card);

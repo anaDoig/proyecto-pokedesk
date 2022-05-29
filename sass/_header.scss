@@ -2,6 +2,7 @@ header {
     background-color: $red;
     position: relative;
     z-index: 1;
+    box-shadow: 1px 0px 3px 1px $mediumGrey;
     
     .container {
         flex-direction: column;
