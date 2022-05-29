@@ -28,8 +28,8 @@ PokemonsAbstract.prototype = {
         _this.url = `https://pokeapi.co/api/v2/pokemon/${_this.pokemonId}`;
         const res = await fetch(_this.url);
         const pokemon = await res.json();
-        console.log('getPokemon');
         CONFIG.pokemonsArray.push(pokemon);
+        // TO DO: solventar cuando recibe el 404
     },
 
     getPokemonsArr: async function () {
@@ -56,14 +56,20 @@ PokemonsAbstract.prototype = {
     },
     generatePokemonTypesButtons: function () {
         var _this = this;
+        const typeAllButton = document.createElement('button');
+        const typeAllButtonText = document.createTextNode('All');
+        typeAllButton.classList.add('filter__button', `all`);
+        typeAllButton.appendChild(typeAllButtonText);
+
         _this.pokemonTypes.forEach(function (element) {
             const button = document.createElement('button');
             const buttonText = document.createTextNode(element);
-            button.setAttribute('data-pokemon-type', element);
             button.classList.add('filter__button', `${element}`);
             button.appendChild(buttonText);
             _this.buttonsContainer.appendChild(button);
         });
+        _this.buttonsContainer.appendChild(typeAllButton);
+
     },
     initFilter: function () {
         let filter = new Filter();

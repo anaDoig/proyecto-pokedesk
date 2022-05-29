@@ -49,7 +49,7 @@
         font-size: size(16);
         cursor: pointer;
         text-transform: capitalize;
-        color: $darkGrey;
+        color: $white;
 
         &.fire {
             background-color: $orange;
@@ -98,6 +98,9 @@
         }
         &.dark {
             background-color: $lightBrown;
+        }
+        &.all {
+            background-color: $red;
         }
     }
     

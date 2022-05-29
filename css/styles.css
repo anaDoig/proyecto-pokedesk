@@ -327,11 +327,11 @@ h1 {
 }
 
 .card--grass {
-  background-color: #b8fadb;
+  background-color: #3ac04a70;
 }
 
 .card--water {
-  background-color: #bed9ff;
+  background-color: #3393dd69;
 }
 
 .card--bug {
@@ -339,7 +339,7 @@ h1 {
 }
 
 .card--poison {
-  background-color: #e7a1e5;
+  background-color: #b667cf8a;
 }
 
 .card--normal {
@@ -363,7 +363,7 @@ h1 {
 }
 
 .card--psychic {
-  background-color: #fb7ca3;
+  background-color: #f666769e;
 }
 
 .card--rock {
@@ -619,7 +619,7 @@ input:focus {
   font-size: 1rem;
   cursor: pointer;
   text-transform: capitalize;
-  color: #555252;
+  color: #fff;
 }
 
 .filter__button.fire {
@@ -627,11 +627,11 @@ input:focus {
 }
 
 .filter__button.grass {
-  background-color: #b8fadb;
+  background-color: #3ac04a70;
 }
 
 .filter__button.water {
-  background-color: #bed9ff;
+  background-color: #3393dd69;
 }
 
 .filter__button.bug {
@@ -639,7 +639,7 @@ input:focus {
 }
 
 .filter__button.poison {
-  background-color: #e7a1e5;
+  background-color: #b667cf8a;
 }
 
 .filter__button.normal {
@@ -663,7 +663,7 @@ input:focus {
 }
 
 .filter__button.psychic {
-  background-color: #fb7ca3;
+  background-color: #f666769e;
 }
 
 .filter__button.rock {
@@ -684,5 +684,9 @@ input:focus {
 
 .filter__button.dark {
   background-color: #debea8;
+}
+
+.filter__button.all {
+  background-color: #fa6655;
 }
 /*# sourceMappingURL=styles.css.map */

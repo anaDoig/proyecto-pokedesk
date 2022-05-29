@@ -46,7 +46,7 @@ FilterAbstract.prototype = {
     filterByType: function (type) {
         var _this = this;
         if (type === "all") {
-            return paintPokemons(CONFIG.pokemonsArray);
+            return Utils.generatePokemons(CONFIG.pokemonsArray, _this.pokemonsContainer);
         }
 
         const filteredByType = CONFIG.pokemonsArray.filter((pokemon) => {
