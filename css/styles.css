@@ -455,6 +455,8 @@ header .container {
           align-items: center;
   gap: 0;
   padding-bottom: 0;
+  position: relative;
+  z-index: 1;
 }
 
 header .pokeballs {

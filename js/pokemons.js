@@ -1,7 +1,7 @@
 function PokemonsAbstract() {
     this.pokemonId;
     this.url;
-    this.pokemonsMax = 200;
+    this.pokemonsMax = 150;
     this.pokemonsContainer = document.querySelector('.pokemons-container-js');
     this.loadingContainer = document.querySelector('.loading-container');
     this.buttonsContainer = document.querySelector('.filter__buttons-container');
